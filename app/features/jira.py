@@ -20,6 +20,7 @@ def create_jira_release(change_number, user_name, description):
 
         except Exception as e:
             logging.exception(f"Couldn't create Jira client")
+            return False
 
         today = date.today()
         change_name = app.config["JIRA_PREFIX"] + change_number
