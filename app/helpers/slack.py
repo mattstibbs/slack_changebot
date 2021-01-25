@@ -82,7 +82,7 @@ def get_next_change_number():
             channel_name = change[0]
             change_number_list.append(int(channel_name.rpartition("-")[-1]))
         except ValueError as e:
-            logging.error(f"Skipping invalid change number {channel_name} ({e})")
+            logging.debug(f"Skipping invalid change number {channel_name} ({e})")
             continue
 
     sorted_change_list = sorted(change_number_list, reverse=True)
